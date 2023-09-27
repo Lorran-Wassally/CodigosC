@@ -7,7 +7,8 @@ class Magic
 {
 public:
     Magic();
-    Magic(double, int, string);
+    Magic(double, int, string, const double);
+    Magic(const Magic&);
 
     int getDamage() const;
     int getMana() const;
@@ -21,6 +22,7 @@ private:
     double damage;
     int mana;
     string name;
+    const double MAXDAMAGE;
 
 };
 #endif
