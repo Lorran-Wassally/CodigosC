@@ -5,18 +5,35 @@ using std::string;
 
 #include "Magic.h"
 #include "Magic.cpp"
+#include "Weapon.h"
+#include "Weapon.cpp"
 
 int main( )
 {  
-    double damage = 50;
+    double damageMM = 24;
+    double damageFB = 36;
+    double damageBS = 8;
     int mana = 20;
-    string name = "Fire Ball";
+    double weight = 12.6;
+    double price = 5.3;
+    string nameMagic = "Fire Ball";
+    string nameWeapon = "Basic Sword";
     const double MAXDAMAGE = 500;
 
     Magic magicMissile;
-    magicMissile.print();
-    Magic fireBall(damage, mana, name, MAXDAMAGE);
-    fireBall.print();
+    //magicMissile.print();
+    Magic fireBall(damageFB, mana, nameMagic, MAXDAMAGE);
+    //fireBall.print();
+    Weapon basicSword(damageBS, weight, price, nameWeapon, MAXDAMAGE);
+    //basicSword.print();
+    basicSword.hit();
+    fireBall.hit();
+    basicSword.hit();
+    fireBall.hit();
+    basicSword.hit();
+    fireBall.hit();
+    basicSword.hit();
+    fireBall.hit();
 
     return 0;
 }

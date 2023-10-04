@@ -16,11 +16,13 @@ public:
     void setMana(int);
     void setName(string);
     void print( ) const;
+    void hit();
 
 private:
 
     double damage;
     int mana;
+    int hitMagic;
     string name;
     const double MAXDAMAGE;
 

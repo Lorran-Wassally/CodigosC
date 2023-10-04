@@ -1,7 +1,10 @@
 #include <iostream>
 #include <string>
+#include <random>
 using std::cout;
 using std::string;
+std::random_device rd;
+std::uniform_int_distribution<int> dist(0, 20);
 
 #include "Magic.h"
 Magic::Magic( ):damage(10),mana(2),name("Magic Missile"),MAXDAMAGE(500)
@@ -73,4 +76,16 @@ void Magic::print( ) const
     cout << "Damage: "   << damage << '\n';
     cout << "Mana: " << mana << '\n';
     cout << "Max Damage: " << MAXDAMAGE << '\n';
+}
+
+void Magic::hit()
+{
+    hitMagic = dist(rd);
+    cout << "hitMagic: " << hitMagic << '\n';
+    if (hitMagic >= 10)
+    {
+        cout << "Hit\n";
+        return;
+    }
+    cout << "Miss\n";
 }
